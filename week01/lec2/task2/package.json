@@ -1,0 +1,7 @@
+{
+  "name": "byebyebootstrap",
+  "version": "1.0.0",
+  "devDependencies": {
+    "posthtml": "^0.8.7"
+  }
+}

@@ -14,7 +14,7 @@
         </ul>
     </section>
     <section>
-        <h2>Спецпроекты:</h2>
+        <h1>Спецпроекты:</h1>
         <ul>
             <li><a href=#>Собери стартап</a></li>
             <li><a href=#>Сценарии Linux</a></li>
@@ -23,13 +23,12 @@
     </section>
 </aside>
 <header>
-    <!-- не знаю правильно ли впихивать левую панельку, в header или сделать отдельный aside/article (всё-таки впихнул в header) -->
     <img src=/img/logo.png alt="Habrahabr homepage">
     <button>
         <img src=/img/menu.png alt="Navigation menu">
     </button>
     <nav>
-        <h2>Разделы</h2>
+        <h1>Разделы</h1>
         <form>
             <input type=search placeholder=Поиск>
         </form>
@@ -50,7 +49,7 @@
         </ul>
     </nav>
     <section>
-        <h2>Спецпроекты:</h2>
+    <h1>Спецпроекты:</h1>
         <ul>
             <li><a href=#>Собери стартап</a></li>
             <li><a href=#>Сценарии Linux</a></li>
@@ -65,34 +64,42 @@
         <header>
             <span><a href=#>Разработка</a>→</span>
             <h1>Десять типичных вопросов на собеседованиях на знание HTML</h1>
-            <!-- про автора -->
             <section>
                 <img src=/img/user.png alt=username>
-                <h2><a href=#>@payround</a></h2>
+                <h1><a href=#>@payround</a></h1>
                 <span>Пользователь</span>
-                <!-- хз, тот ли это эелемент, который просили сделать для кармы -->
-                <dl>
-                    <dt>карма</dt>
-                    <dd>2,0</dd>
-                    <dt>рейтинг</dt>
-                    <dd>0,0</dd>
-                </dl>
-                <a href=#>
-                   <img src=# alt=Профиль>Профиль
-                </a>
-                <dl>
-                    <dt>Публикации</dt>
-                    <dd>1</dd>
-                    <dt>Комментарии</dt>
-                    <dd>5</dd>
-                    <dt>Избранное</dt>
-                    <dd>0</dd>
-                    <dt>Подписчики</dt>
-                    <dd>0</dd>
-                </dl>
+                <span>карма</span>
+                <meter value=2.0>2,0</meter>
+                <span>рейтинг</span>
+                <meter value=2.0>0,0</meter>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href=#>
+                               <img src=# alt=Профиль>
+                               <h1>Профиль</h1>
+                            </a>
+                        </li>
+                        <li>
+                            <span>Публикации</span>
+                            <span>1</span>
+                        </li>
+                        <li>
+                            <span>Комментарии</span>
+                            <span>5</span>
+                        </li>
+                        <li>
+                            <span>Избранное</span>
+                            <span>0</span>
+                        </li>
+                        <li>
+                            <span>Подписчики</span>
+                            <span>0</span>
+                        </li>
+                    </ul>
+                </nav>
             </section>
             <time datetime="2014-12-03 16:57">3 декабря 2014 в 16:57</time>
-            <!-- Хабы и вид статьи -->
             <aside>
                 <img src=/img/hubs.png alt=Хабы>
                 <ul>
@@ -118,77 +125,60 @@
         <!-- работа со статьёй -->
         <section>
             <!-- рейтинг статьи -->
-            <!-- хотелось это впихнуть в dl, но тогда dl съест кнопки голосования -->
-            <section>
-                <a href=#><img src=/img/upvote.png alt=upvote></a>
-                <span>-5</span>
-                <a href=#><img src=/img/downvote.png alt=downvote></a>
-            </section>
+            <a href=#><img src=/img/upvote.png alt=upvote></a>
+            <span>-5</span>
+            <a href=#><img src=/img/downvote.png alt=downvote></a>
             <!-- просмотры\звёзды -->
-            <dl>
-                <dt><img src=/img/views.png alt=Просмотров></dt>
-                <dd>44.2k</dd>
-                <dt><img src=/img/star.png alt=Звёзд></dt>
-                <dd>281</dd>
-            </dl>
+            <span><img src=/img/views.png alt=Просмотров></span>
+            <span>44.2k</span>
+            <span><img src=/img/star.png alt=Звёзд></span>
+            <span>281</span>
             <!-- шаринг в соцсетях -->
-            <section>
-                <ul>
-                    <li><a href=#><img src=/img/twitter.png alt="Share in twitter"></a></li>
-                    <li><a href=#><img src=/img/vk.png alt="Share in vk"></a></li>
-                </ul>
-            </section>
+            <ul>
+                <li><a href=#><img src=/img/twitter.png alt="Share in twitter"></a></li>
+                <li><a href=#><img src=/img/vk.png alt="Share in vk"></a></li>
+            </ul>
         </section>
         <!-- ещё раз инфа про автора -->
         <section>
             <img src=/img/user.png alt>
-            <h2><a href=#>@payround</a></h2>
-            <dl>
-                <dt>карма</dt>
-                <dd>2,0</dd>
-                <dt>рейтинг</dt>
-                <dd>0,0</dd>
-            </dl>
+            <h1><a href=#>@payround</a></h1>
+            <span>карма</span>
+            <meter value=2.0>2,0</meter>
+            <span>рейтинг</span>
+            <meter value=2.0>0,0</meter>
         </section>
         <!-- advertisement -->
         <aside>
             <img src=/img/banner.png alt="Super-puper ad">
         </aside>
         <section>
-            <h2>Комментарии (42)</h2>
+            <h1>Комментарии (42)</h1>
             <article>
                 <header>
                     <img src=/img/user.png alt>
-                    <h2>username</h2>
+                    <h1>username</h1>
                     <time datetime="2014-12-08 12:01">8 декабря 2014 в 12:01</time>
-                    <section>
-                        <a href=#><img src=/img/comment_link.png alt="Ссылка на коммент"></a>
-                        <a href=#><img src=/img/comment_tread.png alt="Показать ветку"></a>
-                        <a href=#><img src=/img/prev_comment.png alt="Предыдущий коммент"></a>
-                    </section>
-                    <section>
-                        <span>0</span>
-                        <a href=#><img src=/img/upvote.png alt=upvote></a>
-                        <a href=#><img src=/img/downvote.png alt=downvote></a>
-                    </section>
+                    <a href=#><img src=/img/comment_link.png alt="Ссылка на коммент"></a>
+                    <a href=#><img src=/img/comment_tread.png alt="Показать ветку"></a>
+                    <a href=#><img src=/img/prev_comment.png alt="Предыдущий коммент"></a>
+                    <a href=#><img src=/img/upvote.png alt=upvote></a>
+                    <span>0</span>
+                    <a href=#><img src=/img/downvote.png alt=downvote></a>
                 </header>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem nulla quidem libero similique est rerum in atque accusamus repudiandae laboriosam officiis nesciunt reiciendis culpa suscipit, sint tenetur rem amet.</p>
             </article>
             <article>
                 <header>
                     <img src=/img/user.png alt>
-                    <h2>username</h2>
+                    <h1>username</h1>
                     <time datetime="2014-12-08 12:01">8 декабря 2014 в 12:01</time>
-                    <section>
-                        <a href=#><img src=/img/comment_link.png alt="Ссылка на коммент"></a>
-                        <a href=#><img src=/img/comment_tread.png alt="Показать ветку"></a>
-                        <a href=#><img src=/img/prev_comment.png alt="Предыдущий коммент"></a>
-                    </section>
-                    <section>
-                        <span>0</span>
-                        <a href=#><img src=/img/upvote.png alt=upvote></a>
-                        <a href=#><img src=/img/downvote.png alt=downvote></a>
-                    </section>
+                    <a href=#><img src=/img/comment_link.png alt="Ссылка на коммент"></a>
+                    <a href=#><img src=/img/comment_tread.png alt="Показать ветку"></a>
+                    <a href=#><img src=/img/prev_comment.png alt="Предыдущий коммент"></a>
+                    <a href=#><img src=/img/upvote.png alt=upvote></a>
+                    <span>0</span>
+                    <a href=#><img src=/img/downvote.png alt=downvote></a>
                 </header>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem nulla quidem libero similique est rerum in atque accusamus repudiandae laboriosam officiis nesciunt reiciendis culpa suscipit, sint tenetur rem amet.</p>
             </article>
@@ -213,9 +203,9 @@
         </aside>
     </article>
     <aside>
-            <h2>Самое читаемое</h2>
+            <h1>Самое читаемое</h1>
             <section>
-                <h2>Сейчас</h2>
+                <h1>Сейчас</h1>
                 <article>
                     <h1><a href=#>Почему стоит нанимать джунов</a></h1>
                     <span>+16</span>
@@ -238,7 +228,7 @@
                 </article>
             </section>
             <section>
-                <h2>Неделя</h2>
+                <h1>Неделя</h1>
                 <article>
                     <h1><a href=#>Почему стоит нанимать джунов</a></h1>
                     <span>+16</span>
@@ -261,7 +251,7 @@
                 </article>
             </section>
             <section>
-                <h2>Месяц</h2>
+                <h1>Месяц</h1>
                 <article>
                     <h1><a href=#>Почему стоит нанимать джунов</a></h1>
                     <span>+16</span>
@@ -297,7 +287,7 @@
     <aside><img src=/img/banner.png alt=advertisement></aside>
     <aside><img src=/img/banner.png alt=advertisement></aside>
     <aside>
-        <h2>Интересные публикации</h2>
+        <h1>Интересные публикации</h1>
         <button>Хабрахабр</button>
         <button>Geektimes</button>
         <article>
@@ -320,10 +310,10 @@
         </article>
     </aside>
     <aside>
-        <h2>Что обсуждают</h2>
+        <h1>Что обсуждают</h1>
         <!-- Не уверен в последующих article/section. Мб лучше article/article или article/li? -->
         <section>
-            <h2>Сегодня</h2>
+            <h1>Сегодня</h1>
             <article>
                 <h1><a href=#>Передача видео с глубоководного робота</a></h1>
                 <img src=/img/comments.png alt=Комментариев>
@@ -336,7 +326,7 @@
             </article>
         </section>
         <section>
-            <h2>Неделя</h2>
+            <h1>Неделя</h1>
             <article>
                 <h1><a href=#>Передача видео с глубоководного робота</a></h1>
                 <img src=/img/comments.png alt=Комментариев>
@@ -352,35 +342,27 @@
 </main>
 <footer>
     <nav>
-        <section>
-            <ul>
-                <li><a href=#>Войти</a></li>
-                <li><a href=#>Регистрация</a></li>
-            </ul>
-        </section>
-        <section>
-            <h1>Разделы</h1>
-            <ul>
-                <li><a href=#>Публикации</a></li>
-                <li><a href=#>Хабы</a></li>
-                <li><a href=#>Компании</a></li>
-            </ul>
-        </section>
-        <section>
-            <h1>Инфо</h1>
-            <ul>
-                <li><a href=#>О сайте</a></li>
-                <li><a href=#>Правила</a></li>
-            </ul>
-        </section>
-        <section>
-            <!-- не уверен, надо ли здесь везде small -->
-            <ul>
-                <li><small><a href=#>&copy; TM</a></small></li>
-                <li><small><a href=#>Служба поддержки</a></small></li>
-                <li><small><a href=#>Мобильная версия</a></small></li>
-            </ul>
-        </section>
+        <ul>
+            <li><a href=#>Войти</a></li>
+            <li><a href=#>Регистрация</a></li>
+        </ul>
+        <h1>Разделы</h1>
+        <ul>
+            <li><a href=#>Публикации</a></li>
+            <li><a href=#>Хабы</a></li>
+            <li><a href=#>Компании</a></li>
+        </ul>
+        <h1>Инфо</h1>
+        <ul>
+            <li><a href=#>О сайте</a></li>
+            <li><a href=#>Правила</a></li>
+        </ul>
+        <!-- не уверен, надо ли здесь везде small -->
+        <ul>
+            <li><small><a href=#>&copy; TM</a></small></li>
+            <li><small><a href=#>Служба поддержки</a></small></li>
+            <li><small><a href=#>Мобильная версия</a></small></li>
+        </ul>
         <address>
             <a href=#><img src=/img/twitter.png alt=Twitter></a>
             <a href=#><img src=/img/facebook.png alt=Facebook></a>

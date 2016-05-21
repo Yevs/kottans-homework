@@ -6,4 +6,6 @@ npm i
 nodejs byebyebootstrap.js <path to your file.html> <optional path to your output file>
 ```
 
-You can use `index.html` if you just want an example of how it works.
+Default output file name is `out.html`.
+
+There is an `index.html` file as example if you just want to see how it works.

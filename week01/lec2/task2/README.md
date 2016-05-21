@@ -2,6 +2,7 @@
 
 ```
 git clone https://github.com/Yevs/kottans-homework.git
+cd kottans-homework/week01/lec2/task2
 npm i
 nodejs byebyebootstrap.js <path to your file.html> <optional path to your output file>
 ```

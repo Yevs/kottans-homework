@@ -1,19 +1,34 @@
 const PostHTML = require('posthtml');
+const fs = require('fs');
 
 const bootstrap_classes = require('./bootstrap_classes.js');
 const IgnoreClasses = require('./plugins/IgnoreClasses.js')(bootstrap_classes);
 const JsToData = require('./plugins/JsToData.js');
 
-const inputHTML = `
-<article class="col-lg-12 js-animation">
-    <div class="btn btn-primary">Edit</div>
-    <form class="form-group form-control js-send-comment js-fade-out">
-        <textarea></textarea>
-    </form>
-</article>`;
+const cmd_arguments = process.argv.slice(2);
+const DEFUALT_OUTPUT_FILE = 'out.html';
 
-PostHTML([IgnoreClasses, JsToData])
-.process(inputHTML)
-.then(res => {
-    console.log(res.html);
+if (cmd_arguments.length === 0) {
+    console.log('Please, specify an input file.');
+    return;
+} else {
+    var input_file = cmd_arguments[0];
+    var output_file = cmd_arguments[1] || DEFUALT_OUTPUT_FILE;
+}
+
+fs.readFile(input_file, (err, data) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    PostHTML([IgnoreClasses, JsToData])
+    .process(data)
+    .then(res => {
+        fs.writeFile(output_file, res.html, err => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+        });
+    });
 });

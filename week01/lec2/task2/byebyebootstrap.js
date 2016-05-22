@@ -11,10 +11,11 @@ const DEFUALT_OUTPUT_FILE = 'out.html';
 if (cmd_arguments.length === 0) {
     console.log('Please, specify an input file.');
     return;
-} else {
-    var input_file = cmd_arguments[0];
-    var output_file = cmd_arguments[1] || DEFUALT_OUTPUT_FILE;
 }
+
+const input_file = cmd_arguments[0];
+const output_file = cmd_arguments[1] || DEFUALT_OUTPUT_FILE;
+
 
 fs.readFile(input_file, (err, data) => {
     if (err) {

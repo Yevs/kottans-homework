@@ -1,144 +1,63 @@
 <!doctype html>
-<link rel="stylesheet" href="style.css">
-<form method="post" enctype="multipart/form-data">
-    <fieldset class="translation-type">
-        <legend>select what you want to translate</legend>
-        <div class="translation-type-options">
-            <input name="translation-type" type="radio" id="translation-type-website">
-            <label for="translation-type-website">
-                <img src="http://s1.iconbird.com/ico/2013/9/450/w256h2561380453900FileDocument256x25632.png" alt/>
-                <p>Website</p>
-            </label>
-            <input name="translation-type" type="radio" id="translation-type-documents">
-            <label for="translation-type-documents">
-                <img src="http://s1.iconbird.com/ico/2013/9/450/w256h2561380453900FileDocument256x25632.png" alt/>
-                <p>Documents</p>
-            </label>
-            <input name="translation-type" type="radio" id="translation-type-social-account">
-            <label for="translation-type-social-account">
-                <img src="http://s1.iconbird.com/ico/2013/9/450/w256h2561380453900FileDocument256x25632.png" alt/>
-                <p>Social account</p>
-            </label>
-        </div>
-    </fieldset>
-    <fieldset class="uploaded-files">
-        <span class="step-number">1</span>
-        <legend class="upload-title">Upload your documents</legend>
-        <span class="file-formats">(Doc, Docx,PDF, Markdown)</span>
-        <button class="upload-button"><img src="http://www.carat.uk.com/wp-content/uploads/2015/02/Cloud-Storage-blue.png" alt>
-            Upload a new file
-        </button>
-        <table>
-            <thead>
-                <tr>
-                    <th>File name</th>
-                    <th>File size</th>
-                    <th>Number of words</th>
-                    <th>Remove</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>business_operations.docx</td>
-                    <td>78kb</td>
-                    <td>842</td>
-                    <td><a href="#"><img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/128/Trash-can-icon.png" alt="Remove file"></a></td>
-                </tr>
-                <tr>
-                    <td>business_operations.docx</td>
-                    <td>78kb</td>
-                    <td>842</td>
-                    <td><a href="#"><img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/128/Trash-can-icon.png" alt="Remove file"></a></td>
-                </tr>
-            </tbody>
-        </table>
-    </fieldset>
-    <fieldset>
-        <span class="step-number">2</span>
-        <legend>Select your desired tone</legend>
-        <label>
-            from
-            <select>
-                <option>English</option>
-                <option>Ukrainian</option>
-            </select>
-        </label>
-        <label>
-            to
-            <select>
-                <option>English</option>
-                <option>Ukrainian</option>
-            </select>
-            <select>
-                <option>English</option>
-                <option>Ukrainian</option>
-            </select>
-        </label>
-        <button>delete</button>
-        <button>+add</button>
-    </fieldset>
-    <fieldset>
-        <span class="step-number">3</span>
-        <legend>Select your desired tone</legend>
-        <label>
-            Friendly/casual
-            <input type="checkbox">
-        </label>
-        <label>
-            Corporate/Pro
-            <input type="checkbox">
-        </label>
-        <label>
-            Media/Formal
-            <input type="checkbox">
-        </label>
-    </fieldset>
-    <fieldset>
-        <span class="step-number">4</span>
-        <input type="range" min="0" max="2">
-        <section>
-            <h1>timeline info</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, recusandae ex. Molestiae a vel iure aliquam suscipit. Accusamus similique ducimus maiores placeat, molestiae quisquam, neque autem, repudiandae rem veritatis alias!</p>
-        </section>
-    </fieldset>
-    <fieldset>
-        <span class="step-number">5</span>
-        <span>Already have an account? sign in</span>
-        <label>
-            Full Name
-            <input type="text">
-        </label>
-        <label>
-            Email Adress
-            <input type="text">
-        </label>
-        <label>
-            Choose a password
-            <input type="password">
-        </label>
-        <label>
-            <input type="checkbox">
-        </label>
-        <label>
-            <input type="checkbox">
-        </label>
-        <label>
-            <input type="checkbox">
-        </label>
-        <label>
-            <input type="text">
-        </label>
-        <label>
-            <input type="text">
-        </label>
-        <label>
-            <input type="text">
-        </label>
-        <label>
-            <input type="checkbox">
-            Terms and condtions
-        </label>
-    </fieldset>
-    <button>Place an order</button>
-    <button>Print a quote</button>
-</form>
+<html lang="en">
+<head>
+    <title>Place an Order</title>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+</head>
+<body>
+    <header class="nav-buttons">
+        <a href="#" class="go-back nav-button" role="button">
+            Go back
+        </a>
+        <a href="#" class="logo"><img src="https://openclipart.org/image/90px/svg_to_png/132355/openclipart-logo-grey.png" alt="Logo"></a>
+        <a href="#" class="sign-in nav-button" role="button">
+            Sign in
+        </a>
+    </header>
+    <main>
+        <form enctype="multipart/form-data" method="post">
+            <div class="finish-order">
+                <section class="order-details">
+                    <div>
+                        <h1>your order</h1>
+                        <div class="wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>items</th>
+                                        <th>details</th>
+                                        <th>price</th>
+                                        <th>delivery</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2 documents</td>
+                                        <td>2 languages</td>
+                                        <td>$ 696.06</td>
+                                        <td><time datetime="2016-05-29">48 hours*</time></td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        </div>
+                    </div>
+                    <div>
+                        <button class="place-order order-button">place order</button>
+                        <button class="print-quote order-button">print quote</button>
+                    </div>
+                </section>
+                <section class="help-info">
+                    <h1>help center</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum debitis in, doloribus autem laudantium, molestias.</p>
+                    <address class="contacts">
+                        <a href="tel:+9710555555" class="phone">+971 (0) 555-555</a>
+                        <a href="mailto:help@qtest.com" class="email">help@qtest.com</a>
+                    </address>
+                </section>
+            </div>
+        </form>
+    </main>
+    <footer></footer>
+</body>
+</html>

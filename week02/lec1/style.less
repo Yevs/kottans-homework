@@ -1,190 +1,282 @@
 @import url(https://fonts.googleapis.com/css?family=Muli);
 
-body {
-    background-color: #ECEEF4;
-    color: #6E768F;
-    padding: 10px;
-    font-family: 'Muli';
+a, button {
+    all: unset;
 }
 
-form {
-    background-color: white;
-    width: 1000px;
-    margin: auto;
-    border: 1px solid #C9D0E1;
-    border-radius: 5px;
-    padding: 80px 50px 60px 120px;
+h1 {
+    font-size: 1em;
+}
 
-    fieldset {
-        border: none;
-        position: relative;
+.clearfix {
+    zoom:1;
+    &::before, &::after {
+        content:"";
+        display:table;
+    }
 
-        legend {
-            display: inline-block;
-            font-size: 1.3em;
+    &:after {
+        clear: both;
+    }
+}
+
+body {
+    color: #918E9F;
+    font-size: 12px;
+    background-color: #ECEEF4;
+    font-family: 'Muli';
+    max-width: 920px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 30px;
+
+    @media(max-width: 784px) {
+        padding: 0;
+    }
+
+    .nav-buttons {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 200px;
+
+        @media (max-width: 784px) {
+            flex-direction: column;
         }
 
-        .step-number {
-            border: 1px solid #CACDD6;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 40px;
-            width: 40px;
-            height: 40px;
+        .nav-button {
             display: block;
-            position: absolute;
-            left: -45px;
-            top: -2px;
-        }
-
-        .file-formats {
-            font-size: 0.7em;
-        }
-    }
-
-    .upload-button {
-        margin-top: 20px;
-        margin-bottom: 20px;
-        background-color: #f7f7f7;
-        border-radius: 5px;
-        border: 1px solid #d7d9e0;
-        display: block;
-        cursor: pointer;
-        color: #9098b7;
-        padding: 16px 31px;
-        text-decoration: none;
-        font-weight: bold;
-
-        img {
-            display: inline-block;
-            vertical-align: middle;
-            width: 20px;
-            height: 20px;
-        }
-    }
-
-    .uploaded-files {
-
-        table {
-            width: 100%;
-            border: 1px solid #EDEFF3;
+            height: 48px;
+            width: 148px;
+            border: 1px solid #CBD1E2;
+            text-transform: uppercase;
+            text-align: center;
+            line-height: 48px;
             border-radius: 5px;
-            padding: 30px 40px;
+            font-weight: bold;
 
-            th {
-                text-align: left;
-
-                &:first-child {
-                    width: 50%;
-                }
-
-                &:nth-child(2), &:nth-child(3) {
-                    width: 20%;
-                }
-
-                &:last-child {
-                    text-align: center;
-                    width: 10%;
-                }
+            @media(max-width:784px) {
+                width: 100%;
             }
+        }
 
-            tr td {
-                padding-top: 15px;
+        .logo img {
+            display: block;
+            width: 90px;
+            height: 90px;
+        }
 
-                &:first-child::before {
-                    background-image: url(http://s1.iconbird.com/ico/2013/9/450/w256h2561380453900FileDocument256x25632.png);
-                    background-size: 25px 25px;
-                    vertical-align: middle;
-                    margin-right: 3px;
-                    display: inline-block;
-                    width: 25px;
-                    height: 25px;
-                    content:"";
-                }
+        .go-back {
+            margin-right: 5px;
 
-                &:last-child {
-                    text-align: center;
+            &::before {
+                background-image: url(https://cdn3.iconfinder.com/data/icons/glyph/227/Button-Back-1-128.png);
+                background-size: 15px 15px;
+                vertical-align: sub;
+                content: '';
+                display: inline-block;
+                height: 15px;
+                width: 15px;
+            }
+        }
 
-                    img {
-                        display: inline-block;
-                        width: 25px;
-                        height: 25px;
-                    }
-                }
+        .sign-in {
+            margin-left: 5px;
+
+            &::before {
+                background-image: url(http://www.safe2go.co.nz/wp-content/uploads/2016/03/login-hotmail.png);
+                background-size: 15px 15px;
+                vertical-align: sub;
+                content: '';
+                display: inline-block;
+                height: 15px;
+                width: 15px;
             }
         }
     }
 
+    form {
 
-    .translation-type {
+        background-color: #fff;
+        padding-bottom: 70px;
+        border-radius: 10px;
+        border: 1px solid #E4E7F0;
 
-        &:first-child {
-            legend {
-                display: block;
-                font-size: 1.3em;
-                text-transform: uppercase;
-                margin: auto;
-            }
+        @media(max-width: 784px) {
+            padding-left: 0;
         }
 
-        .translation-type-options {
+        section h1 {
+            font-size: 1.4em;
+            text-transform: uppercase;
+        }
 
+        .finish-order {
+            padding-left: 70px;
+            border-bottom: 1px solid #E4E7F0;
             display: flex;
-            align-items: center;
-            justify-content: center;
 
-            input {
-                display: none;
+            @media(max-width: 784px) {
+                padding-left: 0;
+                flex-direction: column;
+            }
 
-                &:checked + label {
+            .order-details {
+                flex-basis: 100%;
+                padding-top: 25px;
+                display: inline-flex;
+                justify-content: space-around;
+                padding-right: 35px;
+                border-right: 1px solid #E4E7F0;
+
+                @media(max-width: 784px) {
+                    display: flex;
+                    flex-direction: column;
+                    padding-right: 0;
+                    width: 100%;
+                }
+
+                h1 {
                     position: relative;
-                    border: 1px solid #76A7E1;
-                    box-shadow: 0 0 0 4px #76A7E1;
 
-                   &:after {
-                        position: absolute;
-                        top: -28px;
-                        right: -23px;
-                        background-image: url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png);
-                        background-size: 50px 50px;
+                    &::before {
+                        background-image: url(http://www.iconarchive.com/download/i97172/iconsmind/outline/Tablet-3.ico);
+                        background-size: 20px 20px;
+                        vertical-align: sub;
+                        content: '';
                         display: inline-block;
-                        width: 50px;
-                        height: 50px;
-                        content:"";
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                        top: 0;
+                        left: -30px;
                     }
+                }
+
+            }
+
+            .help-info {
+                padding-top: 25px;
+                padding-right: 45px;
+                padding-left: 40px;
+                flex-basis: 40%;
+                display: inline-block;
+
+                @media(max-width: 784px) {
+                    padding-left: 0;
+                    padding-right: 0;
+                }
+
+                h1 {
+                    position: relative;
+
+                    &::before {
+                        background-image: url(http://www.iconarchive.com/download/i97172/iconsmind/outline/Tablet-3.ico);
+                        background-size: 20px 20px;
+                        vertical-align: sub;
+                        content: '';
+                        display: inline-block;
+                        height: 20px;
+                        width: 20px;
+                        position: absolute;
+                        top: 0;
+                        left: -30px;
+                    }
+                }
+
+                .contacts {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: bold;
+                }
+
+            }
+
+            .order-button {
+                display: block;
+                width: 154px;
+                height: 46px;
+                text-align: center;
+                line-height: 46px;
+                text-transform: uppercase;
+                border: 1px solid black;
+                border-radius: 5px;
+                font-weight: bold;
+
+                @media(max-width:784px) {
+                    width: 100%;
+                }
+
+                &.place-order {
+                    margin-bottom: 20px;
+                    background-color: #5FCAC6;
+                    border: 1px solid #59BBB7;
+                    color: #fff;
+                }
+
+                &.print-quote {
+                    background-color: #F7F7FA;
+                    border: 1px solid #E7E7ED;
+                    margin-bottom: 30px;
+                }
+
+
+                &:hover {
+                    cursor: pointer;
                 }
             }
 
-            label {
-
-                padding-top: 40px;
-                background-color: #F7F7FA;
-                display: block;
-                width: 33%;
-                height: 150px;
-                margin-top: 40px;
-                border: 1px solid #EBECEF;
-                border-radius: 5px;
-
-                &:nth-of-type(2) {
-                    margin-left: 30px;
-                    margin-right: 30px;
-                }
-
-                img {
-                    display: block;
+            @media(max-width: 784px) {
+                .wrapper{
+                    display: table;
                     margin: auto;
-                    width: 78px;
-                    height: 70px;
+                }
+            }
+
+            table {
+
+                thead {
+                    text-transform: uppercase;
+
+                    th {
+                        text-align: left;
+                    }
                 }
 
-                p {
-                    text-align: center;
-                    font-weight: bold;
-                    text-transform: capitalize;
+                td, th {
+                  padding: 6px;
+                }
+
+
+                @media(max-width: 784px) {
+                    display: block;
+                    width: 100%;
+                    .clearfix();
+
+                    thead, tbody, th, td, tr {
+                        display: block;
+                    }
+
+                    thead {
+                        min-width: 65px;
+                        width: 10%;
+                        float: left;
+
+                        th {
+                            text-align: right;
+                        }
+                    }
+
+                    tbody {
+                        // width: 90%;
+                        float: left;
+
+                        td {
+                            text-align: left;
+                        }
+                    }
                 }
             }
         }
     }
-
 }

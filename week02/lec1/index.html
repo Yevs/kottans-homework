@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,6 +56,124 @@
                         <a href="mailto:help@qtest.com" class="email">help@qtest.com</a>
                     </address>
                 </section>
+            </div>
+            <div class="order-form-controls">
+                <section class="translation-type">
+                    <h1>select what you want to translate</h1>
+                    <fieldset>
+                        <div>
+                            <input name="translation-type" type="radio" id="translation-type-website">
+                            <label class="translation-type-option" for="translation-type-website">
+                                <img src="https://cdn2.iconfinder.com/data/icons/app-types-in-grey/128/culture_512pxGREY.png" alt>
+                                Website
+                            </label>
+                            <input name="translation-type" type="radio" id="translation-type-documents">
+                            <label class="translation-type-option" for="translation-type-documents">
+                                <img src="https://cdn2.iconfinder.com/data/icons/app-types-in-grey/128/culture_512pxGREY.png" alt>
+                                Documents
+                            </label>
+                            <input name="translation-type" type="radio" id="translation-type-social">
+                            <label class="translation-type-option" for="translation-type-social">
+                                <img src="https://cdn2.iconfinder.com/data/icons/app-types-in-grey/128/culture_512pxGREY.png" alt>
+                                Social Account
+                            </label>
+                        </div>
+                    </fieldset>
+                </section>
+                <section class="document-upload numerated">
+                    <h1>Upload your documents</h1>
+                    <span>(Doc, Docx, Text, PDF, Markdown)</span>
+                    <label>
+                        Upload a new file
+                        <input type="file">
+                    </label>
+                    <table class="uploaded-files">
+                        <thead>
+                            <tr>
+                                <th>File name</th>
+                                <th>File size</th>
+                                <th>Number of words</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>business_operations.docx</td>
+                                <td>78kb</td>
+                                <td>842</td>
+                                <td>
+                                    <a href="#" role="button">
+                                        <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/128/Trash-can-icon.png" alt="Remove file">
+                                    </a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>business_operations.docx</td>
+                                <td>78kb</td>
+                                <td>842</td>
+                                <td>
+                                    <a href="#" role="button">
+                                        <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/128/Trash-can-icon.png" alt="Remove file">
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="languages numerated">
+                    <h1>Choose your language pairings</h1>
+                    <fieldset>
+                        <label class="from-language">
+                            <div>From</div>
+                            <select class="language-select">
+                                <option selected>English</option>
+                                <option>Ukrainian</option>
+                            </select>
+                        </label>
+                        <label class="to-languages">
+                            <div>To</div>
+                            <select class="language-select">
+                                <option selected>English</option>
+                                <option>Ukrainian</option>
+                            </select>
+                            <select class="language-select">
+                                <option selected>English</option>
+                                <option>Ukrainian</option>
+                            </select>
+                            <button class="remove-language">
+                                <img src="http://icons.iconarchive.com/icons/custom-icon-design/pretty-office-8/128/Trash-can-icon.png" alt="Remove language">
+                            </button>
+                            <button class="add-language">
+                                + Add
+                            </button>
+                        </label>
+                    </fieldset>
+                </section>
+                <div class="tone-and-urgency">
+                    <section class="language-style numerated">
+                        <h1>Select your desired tone</h1>
+                        <fieldset>
+                            <input type="radio" name="language-style" id="language-style-casual">
+                            <label for="language-style-casual">
+                                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/591234-speech-bubble-128.png" alt>
+                                Friendly/casual
+                            </label>
+                            <input type="radio" name="language-style" id="language-style-corporate">
+                            <label for="language-style-corporate">
+                                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/591234-speech-bubble-128.png" alt>
+                                Corporate/Pro
+                            </label>
+                            <input type="radio" name="language-style" id="language-style-media">
+                            <label for="language-style-media">
+                                <img src="https://cdn0.iconfinder.com/data/icons/feather/96/591234-speech-bubble-128.png" alt>
+                                Media/Formal
+                            </label>
+                        </fieldset>
+                    </section>
+                    <section class="job-urgency numerated">
+                        <h1>Tell us how urgent your job is</h1>
+                    </section>
+                </div>
             </div>
         </form>
     </main>

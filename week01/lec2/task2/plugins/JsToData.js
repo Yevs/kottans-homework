@@ -16,7 +16,7 @@ module.exports = tree => {
         node.attrs['data-js'] = `${node['data-js'] || ''} ${datas.join(' ')}`.trim();
         node.attrs.class = new_classes.join(' ');
         if (node.attrs.class.length === 0) {
-            deleteAttribute(node, 'class');
+            node = deleteAttribute(node, 'class');
         }
         return node;
     });

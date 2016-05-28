@@ -6,13 +6,12 @@ module.exports = _ignoredClasses => {
         tree.match({attrs: {class: true}}, node => {
             const classes = node.attrs.class
                             .split(' ')
-                            .filter(klass => klass.length > 0)
-                            .filter(klass => !ignoredClasses.has(klass))
+                            .filter(klass => klass.length && !ignoredClasses.has(klass))
                             .join(' ');
             if (classes.length > 0) {  // any classes are left
                 node.attrs.class = classes;
             } else {
-                deleteAttribute(node, 'class');
+                node = deleteAttribute(node, 'class');
             }
             return node;
         });

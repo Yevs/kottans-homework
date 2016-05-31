@@ -11,7 +11,9 @@ function copy(object, except) {
         if (prop === except) {
             continue;
         }
-        if (hasProps(object[prop])) {
+        if (typeof object[prop] === 'object' &&
+            hasProps(object[prop]) &&
+            !Array.isArray(object[prop])) {
             copied[prop] = copy(object[prop], except);
             if (!hasProps(copied[prop])) {
                 delete copied[prop];

@@ -17,6 +17,7 @@ function cloneRegExp(regex) {
     return new RegExp(pattern, flags);
 }
 
+
 function copy(object) {
     if (!isObject(object)) {
         return object;
@@ -52,6 +53,7 @@ function copy(object) {
             });
     return result;
 }
+
 
 function deepAssign(target, source) {
     if (!isObject(source)) {

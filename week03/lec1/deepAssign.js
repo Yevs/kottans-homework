@@ -1,5 +1,7 @@
 const isEnumerable = (object, prop) => Object.prototype.propertyIsEnumerable.call(object, prop);
 const isObject = object => object === Object(object);
+const getEnumerableKeys = obj => Reflect.ownKeys(obj)
+                                        .filter(key => isEnumerable(obj, key));
 
 
 function cloneRegExp(regex) {
@@ -30,27 +32,25 @@ function copy(object) {
     }
 
     let result = new object.constructor();
-    Reflect.ownKeys(object)
-           .filter(key => isEnumerable(object, key))
-           .forEach(key => {
+    getEnumerableKeys(object).forEach(key => {
 
-                let value = object[key];
-                result[key] = copy(value);
+        let value = object[key];
+        result[key] = copy(value);
 
-                if (value instanceof Map) {
-                    for (let [itemKey, itemVal] of value) {
-                        result[key].set(copy(itemKey), copy(itemVal));
-                    }
-                    return;
-                }
+        if (value instanceof Map) {
+            for (let [itemKey, itemVal] of value) {
+                result[key].set(copy(itemKey), copy(itemVal));
+            }
+            return;
+        }
 
-                if (value instanceof Set) {
-                    for (let item of value) {
-                        result[key].add(copy(item));
-                    }
-                    return;
-                }
-            });
+        if (value instanceof Set) {
+            for (let item of value) {
+                result[key].add(copy(item));
+            }
+            return;
+        }
+    });
     return result;
 }
 
@@ -59,11 +59,9 @@ function deepAssign(target, source) {
     if (!isObject(source)) {
         return;
     }
-    Reflect.ownKeys(source)
-       .filter(key => isEnumerable(source, key))
-       .forEach(key => {
-            target[key] = copy(source[key]);
-       });
+    getEnumerableKeys(source).forEach(key => {
+        target[key] = copy(source[key]);
+   });
 }
 
 

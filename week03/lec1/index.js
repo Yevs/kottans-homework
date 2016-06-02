@@ -10,7 +10,10 @@ let source1 = {
     f: /^abc$/g,
     g: {
         a: 3,
-        b: 4
+        b: 4,
+        c: {
+            x: new Date()
+        }
     },
     h: date
 };

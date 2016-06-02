@@ -1,7 +1,6 @@
-const isEnumerable = (object, prop) => Object.prototype.propertyIsEnumerable.call(object, prop);
-const isObject = object => object === Object(object);
-const getEnumerableKeys = obj => Reflect.ownKeys(obj)
-                                        .filter(key => isEnumerable(obj, key));
+const isEnumerable = require('./helpers/isEnumerable');
+const isObject = require('./helpers/isObject');
+const getEnumerableKeys = require('./helpers/getEnumerableKeys');
 
 
 function cloneRegExp(regex) {
@@ -33,24 +32,21 @@ function copy(object) {
 
     let result = new object.constructor();
     getEnumerableKeys(object).forEach(key => {
-
-        let value = object[key];
-        result[key] = copy(value);
-
-        if (value instanceof Map) {
-            for (let [itemKey, itemVal] of value) {
-                result[key].set(copy(itemKey), copy(itemVal));
-            }
-            return;
-        }
-
-        if (value instanceof Set) {
-            for (let item of value) {
-                result[key].add(copy(item));
-            }
-            return;
-        }
+        result[key] = copy(object[key]);
     });
+
+    if (object instanceof Map) {
+        for (let [itemKey, itemVal] of object) {
+            result.set(copy(itemKey), copy(itemVal));
+        }
+    }
+
+    if (object instanceof Set) {
+        for (let item of object) {
+            result.add(copy(item));
+        }
+    }
+
     return result;
 }
 

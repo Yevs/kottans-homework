@@ -172,8 +172,33 @@
                     </section>
                     <section class="job-urgency numerated">
                         <h1>Tell us how urgent your job is</h1>
+                        <input type="range" min="0" max="2" value="1">
+                        <div class="urgency-labels">
+                            <span>I got time</span>
+                            <span>Average</span>
+                            <span>Yesterday</span>
+                        </div>
+                        <section class="urgency-info">
+                            <h1>Timeline info</h1>
+                            <p>Lorem <em>ipsum</em> dolor sit amet, consectetur adipisicing elit. Tenetur, suscipit!</p>
+                        </section>
                     </section>
                 </div>
+                <section class="payment numerated">
+                    <h1>Sign up and choose a payment method</h1>
+                    <p>Already have an account? <a href="#">Sign in</a>.</p>
+                    <fieldset>
+                        <label class="full-name account-field valid"><div>Full name</div><input type="text"></label>
+                        <label class="email account-field valid"><div>Email address</div><input type="text"></label>
+                        <label class="password account-field invalid"><div>Choose a password</div><input type="text"></label>
+                        <input type="radio" name="payment-method" id="payment-method-visa">
+                        <label for="payment-method-visa"></label>
+                        <input type="radio" name="payment-method" id="payment-method-amazon">
+                        <label for="payment-method-amazon"></label>
+                        <input type="radio" name="payment-method" id="payment-method-paypal">
+                        <label for="payment-method-paypal"></label>
+                    </fieldset>
+                </section>
             </div>
         </form>
     </main>

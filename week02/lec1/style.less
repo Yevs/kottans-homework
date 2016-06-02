@@ -698,6 +698,146 @@ body {
 
             .job-urgency {
                 flex: 1 1 50%;
+
+                .urgency-labels {
+                    display: flex;
+                    justify-content: space-between;
+                    text-transform: uppercase;
+                    font-size: 0.8em;
+                    font-weight: bold;
+
+                    @media (max-width: 450px) {
+                        span:nth-of-type(2) {
+                            display: none;
+                        }
+                    }
+                }
+
+                .urgency-info {
+
+                    border: 1px solid #CBD1E2;
+                    padding: 20px 20px 20px 60px;
+                    border-radius: 5px;
+
+                    @media (max-width: 900px) {
+                        display: none;
+                    }
+
+                    h1 {
+                        text-transform: uppercase;
+                        font-size: 0.9em;
+                        position: relative;
+
+
+                        &::after {
+                            position: absolute;
+                            top: -9px;
+                            left: -35px;
+                            background-image: url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png);
+                            background-size: 30px 30px;
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            content:"";
+                        }
+                    }
+
+                    em {
+                        text-transform: uppercase;
+                        color: #EDBE76;
+                        font-weight: bold;
+                    }
+
+                }
+
+                input[type=range] {
+                  -webkit-appearance: none;
+                  width: 89%;
+                  margin: 45px auto 10px auto;
+                  display: block;
+                }
+                input[type=range]:focus {
+                  outline: none;
+                }
+                input[type=range]::-webkit-slider-runnable-track {
+                  width: 100%;
+                  height: 7px;
+                  cursor: pointer;
+                  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+                  background: #eff0f5;
+                  border-radius: 10px;
+                  border: 0px solid rgba(86, 36, 37, 0);
+                }
+                input[type=range]::-webkit-slider-thumb {
+                  box-shadow: 0px 0px 0px rgba(5, 0, 0, 0), 0px 0px 0px rgba(31, 0, 0, 0);
+                  border: 0px solid rgba(0, 0, 0, 0);
+                  height: 16px;
+                  width: 17px;
+                  border-radius: 50px;
+                  background: #edbe76;
+                  cursor: pointer;
+                  -webkit-appearance: none;
+                  margin-top: -4.5px;
+                }
+                input[type=range]:focus::-webkit-slider-runnable-track {
+                  background: #eff0f5;
+                }
+                input[type=range]::-moz-range-track {
+                  width: 100%;
+                  height: 7px;
+                  cursor: pointer;
+                  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+                  background: #eff0f5;
+                  border-radius: 10px;
+                  border: 0px solid rgba(86, 36, 37, 0);
+                }
+                input[type=range]::-moz-range-thumb {
+                  box-shadow: 0px 0px 0px rgba(5, 0, 0, 0), 0px 0px 0px rgba(31, 0, 0, 0);
+                  border: 0px solid rgba(0, 0, 0, 0);
+                  height: 16px;
+                  width: 17px;
+                  border-radius: 50px;
+                  background: #edbe76;
+                  cursor: pointer;
+                }
+                input[type=range]::-ms-track {
+                  width: 100%;
+                  height: 7px;
+                  cursor: pointer;
+                  background: transparent;
+                  border-color: transparent;
+                  color: transparent;
+                }
+                input[type=range]::-ms-fill-lower {
+                  background: #eff0f5;
+                  border: 0px solid rgba(86, 36, 37, 0);
+                  border-radius: 20px;
+                  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+                }
+                input[type=range]::-ms-fill-upper {
+                  background: #eff0f5;
+                  border: 0px solid rgba(86, 36, 37, 0);
+                  border-radius: 20px;
+                  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
+                }
+                input[type=range]::-ms-thumb {
+                  box-shadow: 0px 0px 0px rgba(5, 0, 0, 0), 0px 0px 0px rgba(31, 0, 0, 0);
+                  border: 0px solid rgba(0, 0, 0, 0);
+                  height: 16px;
+                  width: 17px;
+                  border-radius: 50px;
+                  background: #edbe76;
+                  cursor: pointer;
+                  height: 7px;
+                }
+                input[type=range]:focus::-ms-fill-lower {
+                  background: #eff0f5;
+                }
+                input[type=range]:focus::-ms-fill-upper {
+                  background: #eff0f5;
+                }
+
+
             }
 
             .numerated::before {
@@ -707,6 +847,85 @@ body {
             @media (max-width: 980px) {
                 flex-direction: column;
                 align-items: stretch;
+            }
+        }
+
+        .payment {
+
+            .full-name {
+                display: block;
+                margin-bottom: 25px;
+            }
+
+            .email, .password {
+                display: inline-block;
+            }
+
+            .email {
+                margin-right: 60px;
+            }
+
+            @media(max-width: 900px) {
+                .email, .password, .full-name {
+                    display: block;
+                    margin-bottom: 20px;
+                    margin-right: auto;
+                }
+            }
+
+            .account-field {
+                width: 100%;
+                max-width: 242px;
+                position: relative;
+
+                div {
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 0.8em;
+                    margin-bottom: 3px;
+                }
+
+                input {
+                    height: 33px;
+                    width: 100%;
+                    border: 1px solid #CBD1E2;
+                    border-radius: 5px;
+                    font-size: 1.2em;
+                    padding-left: 10px;
+                    padding-right: 30px;
+                }
+
+                &.valid::after {
+                    position: absolute;
+                    top: 22px;
+                    right: -39px;
+                    background-image: url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png);
+                    background-size: 25px 25px;
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    content:"";
+                }
+
+                &.invalid::after {
+                    position: absolute;
+                    top: 23px;
+                    right: -37px;
+                    background-image: url(http://s1.iconbird.com/ico/0612/GooglePlusInterfaceIcons/w128h1281338911337cross.png);
+                    background-size: 25px 25px;
+                    display: inline-block;
+                    width: 25px;
+                    height: 25px;
+                    content:"";
+                }
+            }
+
+            input[type=radio] {
+                display: none;
+            }
+
+            a {
+                text-decoration: underline;
             }
         }
     }

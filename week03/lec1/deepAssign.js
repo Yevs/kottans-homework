@@ -1,22 +1,7 @@
 const isEnumerable = require('./helpers/isEnumerable');
 const isObject = require('./helpers/isObject');
 const getEnumerableKeys = require('./helpers/getEnumerableKeys');
-
-
-function cloneRegExp(regex) {
-    const pattern = regex.source;
-    let flags = '';
-    if (regex.global) {
-        flags += 'g';
-    }
-    if (regex.ignoreCase) {
-        flags += 'i';
-    }
-    if (regex.multiline) {
-        flags += 'm';
-    }
-    return new RegExp(pattern, flags);
-}
+const cloneRegExp = require('./helpers/cloneRegExp.js');
 
 
 function copy(object) {

@@ -1,7 +1,13 @@
-const isEnumerable = require('./helpers/isEnumerable');
 const isObject = require('./helpers/isObject');
-const getEnumerableKeys = require('./helpers/getEnumerableKeys');
+const getEnumerableKeys = require('./helpers/getEnumerableKeys.js');
 const cloneRegExp = require('./helpers/cloneRegExp.js');
+
+
+function copyEnumerableKeys(target, source) {
+    getEnumerableKeys(source).forEach(key => {
+        target[key] = copy(source[key]);
+    });
+}
 
 
 function copy(object) {
@@ -16,9 +22,7 @@ function copy(object) {
     }
 
     let result = new object.constructor();
-    getEnumerableKeys(object).forEach(key => {
-        result[key] = copy(object[key]);
-    });
+    copyEnumerableKeys(result, object);
 
     if (object instanceof Map) {
         for (let [itemKey, itemVal] of object) {
@@ -40,9 +44,7 @@ function deepAssign(target, source) {
     if (!isObject(source)) {
         return;
     }
-    getEnumerableKeys(source).forEach(key => {
-        target[key] = copy(source[key]);
-   });
+    copyEnumerableKeys(target, source);
 }
 
 

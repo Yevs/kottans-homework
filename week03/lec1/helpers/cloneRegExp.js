@@ -10,5 +10,5 @@ module.exports = regex => {
     if (regex.multiline) {
         flags += 'm';
     }
-    return new RegExp(pattern, flags);
+    return new regex.constructor(pattern, flags);
 };

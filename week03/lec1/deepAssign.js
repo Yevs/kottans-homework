@@ -15,7 +15,7 @@ function copy(object) {
         return object;
     }
     if (object instanceof Date) {
-        return new Date(object);
+        return new object.constructor(object);
     }
     if (object instanceof RegExp) {
         return cloneRegExp(object);

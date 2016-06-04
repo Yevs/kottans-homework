@@ -928,5 +928,101 @@ body {
                 text-decoration: underline;
             }
         }
+
+        .wrapper {
+
+            display: flex;
+            margin-top: 30px;
+
+            @media (max-width: 900px) {
+                flex-direction: column;
+            }
+
+            input[type=radio]:checked + label {
+                border: 1px solid #76A7E1;
+                box-shadow: 0 0 0 4px #76A7E1;
+
+                &::after {
+                    position: absolute;
+                    top: -23px;
+                    right: -20px;
+                    background-image: url(https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678134-sign-check-128.png);
+                    background-size: 35px 35px;
+                    display: inline-block;
+                    width: 35px;
+                    height: 35px;
+                    content:"";
+                }
+            }
+
+            .payment-method {
+                width: 200px;
+                height: 90px;
+                border: 1px solid #CBD1E2;
+                background-color: #ECEEF4;
+                cursor: pointer;
+                position: relative;
+                border-radius: 3px;
+
+                &:nth-of-type(2) {
+                    margin-left: 20px;
+                    margin-right: 20px;
+                }
+
+                img {
+                    display: block;
+                    margin: 10px auto 30px auto;
+                    width: 100px;
+                    height: 60px;
+                }
+
+                @media (max-width: 900px) {
+                    margin: 20px auto 20px auto !important;
+                }
+            }
+        }
+
+        .card-field {
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            margin-top: 20px;
+
+            @media (max-width: 900px) {
+                display: block;
+                margin: 10px auto 10px auto !important;
+            }
+
+            &.card-number {
+                max-width: 340px;
+            }
+
+            &.expiry-date {
+                margin-left: 50px;
+                margin-right: 50px;
+                max-width: 80px;
+            }
+
+            &.card-code {
+                max-width: 60px;
+            }
+
+            div {
+                text-transform: uppercase;
+                font-weight: bold;
+                font-size: 0.8em;
+                margin-bottom: 3px;
+            }
+
+            input {
+                height: 33px;
+                width: 100%;
+                border: 1px solid #CBD1E2;
+                border-radius: 5px;
+                font-size: 1.2em;
+                padding-left: 10px;
+                padding-right: 30px;
+            }
+        }
     }
 }

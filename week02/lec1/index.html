@@ -191,12 +191,23 @@
                         <label class="full-name account-field valid"><div>Full name</div><input type="text"></label>
                         <label class="email account-field valid"><div>Email address</div><input type="text"></label>
                         <label class="password account-field invalid"><div>Choose a password</div><input type="text"></label>
-                        <input type="radio" name="payment-method" id="payment-method-visa">
-                        <label for="payment-method-visa"></label>
-                        <input type="radio" name="payment-method" id="payment-method-amazon">
-                        <label for="payment-method-amazon"></label>
-                        <input type="radio" name="payment-method" id="payment-method-paypal">
-                        <label for="payment-method-paypal"></label>
+                        <div class="wrapper">
+                            <input type="radio" name="payment-method" id="payment-method-visa">
+                            <label class="payment-method" for="payment-method-visa">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/175px-Visa.svg.png" alt="visa">
+                            </label>
+                            <input type="radio" name="payment-method" id="payment-method-amazon">
+                            <label class="payment-method" for="payment-method-amazon">
+                                <img src="http://www.business.ua/upload/iblock/8c1/8c1fac90dc9f89957e3eaef354090970.jpg?1481671445173736" alt="paypal">
+                            </label>
+                            <input type="radio" name="payment-method" id="payment-method-paypal">
+                            <label class="payment-method" for="payment-method-paypal">
+                                <img src="https://pmcdeadline2.files.wordpress.com/2015/08/amazon-featured-image.jpg?w=446&h=299&crop=1" alt="amazon">
+                            </label>
+                        </div>
+                        <label class="card-field card-number"><div>Card number</div><input type="text"></label>
+                        <label class="card-field expiry-date"><div>Expiry date</div><input type="text"></label>
+                        <label class="card-field card-code"><div>Code</div><input type="text"></label>
                     </fieldset>
                 </section>
             </div>

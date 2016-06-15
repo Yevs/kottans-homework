@@ -1,6 +1,6 @@
 const ExtendedPromise = require('./extendedPromise');
 
-ExtendedPromise.map(
-    [Promise.resolve(1), Promise.resolve(2)],
-    v => v*2)
-    .then(v => console.log(v));
+ExtendedPromise
+.reduce([1,2,3], (sum, val) => {throw err;}, 0)
+.then(x => {console.log(x);})
+.catch(e => {console.log('CATCHED');});

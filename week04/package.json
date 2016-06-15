@@ -1,0 +1,15 @@
+{
+  "name": "promise-extension",
+  "version": "1.0.0",
+  "description": "asd",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependecies": {
+    "mocha": "~2.1"
+  },
+  "author": "Yevsyuhov Yevhen",
+  "license": "ISC"
+}

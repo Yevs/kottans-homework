@@ -7,6 +7,7 @@
     <meta charset="utf-8">
 </head>
 <body>
+    <div class="non-footer">
     <header class="nav-buttons">
         <a href="#" class="go-back nav-button" role="button">
             Go back
@@ -206,13 +207,42 @@
                             </label>
                         </div>
                         <label class="card-field card-number"><div>Card number</div><input type="text"></label>
-                        <label class="card-field expiry-date"><div>Expiry date</div><input type="text"></label>
+                        <label class="card-field expiry-date"><div>Expiry date</div><input type="text" placeholder="MM/DD"></label>
                         <label class="card-field card-code"><div>Code</div><input type="text"></label>
                     </fieldset>
+                </section>
+                <section class="form-submit">
+                    <label for="terms" class="terms-label">
+                        <input type="checkbox" id="terms">
+                        <small>I agree to <a href="#">Terms &amp; Conditions</a></small>
+                    </label>
+                    <a href="#" class="finish-button submit-button">Place Order</a>
+                    <a href="#" class="finish-button quote-button">Print Quote</a>
                 </section>
             </div>
         </form>
     </main>
-    <footer></footer>
+    </div>
+    <footer>
+        <aside class="about footer-element">
+            <h1>What we do</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse commodi nam perspiciatis, molestiae dolor vero.</p>
+        </aside>
+        <address class="geo-address footer-element">
+            <h1>Our main office</h1>
+            <p>Dubai, Wall St.</p>
+            <p>Dubai, Wall St.</p>
+            <p>Dubai, Wall St.</p>
+        </address>
+        <address class="social footer-element">
+            <h1>Conect with us</h1>
+            <ul>
+                <li><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" alt="facebook"><a href="#">Facebook</a></li>
+                <li><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" alt="facebook"><a href="#">Facebook</a></li>
+                <li><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/square-facebook-128.png" alt="facebook"><a href="#">Facebook</a></li>
+            </ul>
+        </address>
+        <img class="footer-logo footer-element" src="https://openclipart.org/image/90px/svg_to_png/132355/openclipart-logo-grey.png" alt="logo">
+    </footer>
 </body>
 </html>

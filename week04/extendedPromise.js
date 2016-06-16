@@ -1,36 +1,13 @@
 ;'use strict';
 
-function* enumerate(iterable) {
-    let index = 0;
-    for (let iterator of iterable) {
-        yield [index++, iterator];
-    }
-}
-
-function promisify(obj) {
-    if (obj instanceof Promise) {
-        return obj;
-    }
-    return Promise.resolve(obj);
-}
-
-function isObject(obj) {
-    return obj === Object(obj);
-}
-
-function isIterable(obj) {
-    if (!isObject(obj)) {
-        return false;
-    }
-    return Symbol.iterator in obj;
-}
-
+const isIterable = require('./helpers/isIterable');
+const enumerate = require('./helpers/enumerate');
 
 class ExtendedPromise extends Promise {
 
     static map(input, mapper) {
         return new this((resolve, reject) => {
-            promisify(input).then(iterable => {
+            Promise.resolve(input).then(iterable => {
                 let pendingPromises = 0;
                 let results = [];
                 if (!isIterable(iterable)) {
@@ -38,8 +15,8 @@ class ExtendedPromise extends Promise {
                 }
                 for (let iterator of iterable) {
                     pendingPromises++;
-                    promisify(iterator).then(iterator => {
-                        promisify(mapper(iterator)).then(value => {
+                    Promise.resolve(iterator).then(iterator => {
+                        Promise.resolve(mapper(iterator)).then(value => {
                             results.push(value);
                             if (!--pendingPromises) {
                                 resolve(results);
@@ -51,12 +28,37 @@ class ExtendedPromise extends Promise {
         });
     }
 
+    static some(input, count) {
+        return new this((resolve, reject) => {
+            Promise.resolve(input).then(input => {
+                let pendingCount = 0;
+                let resolved = [];
+                let rejected = [];
+                for (let promise of input) {
+                    Promise.resolve(promise).then(value => {
+                        if (resolved.length < count) {
+                            resolved.push(value);
+                        }
+                        if (resolved.length == count) {
+                            resolve(resolved);
+                        }
+                    }, error => {
+                        rejected.push(error);
+                        if (pendingCount - rejected.length < count) {
+                            reject(rejected);
+                        }
+                    });
+                }
+            }, reject);
+        });
+    }
+
     static reduce(input, reducer, initialValue) {
         const useFirst = arguments.length <= 2;
         let accumulator;
         return new this((resolve, reject) => {
-            promisify(initialValue).then(initialValue => {
-                promisify(input).then(input => {
+            Promise.resolve(initialValue).then(initialValue => {
+                Promise.resolve(input).then(input => {
                     if (!isIterable(input)) {
                         if (useFirst) {
                             throw new TypeError('Input does not resolve to Iterable');
@@ -68,13 +70,13 @@ class ExtendedPromise extends Promise {
                     let promiseAccumulator = Promise.resolve(initialValue);
                     for (let [index, value] of enumerate(input)) {
                         length++;
-                        promisify(value).then(value => {
+                        Promise.resolve(value).then(value => {
                             if (!index && useFirst) {
                                 promiseAccumulator = Promise.resolve(value);
                                 return;
                             }
                             promiseAccumulator = promiseAccumulator.then(accumulator => {
-                                return promisify(reducer(accumulator, value, index, length));
+                                return Promise.resolve(reducer(accumulator, value, index, length));
                             }, reject);
                             if (index == length - 1) {
                                 promiseAccumulator.then(resolve, reject);

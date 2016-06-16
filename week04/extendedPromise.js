@@ -7,7 +7,7 @@ class ExtendedPromise extends Promise {
 
     static map(input, mapper) {
         return new this((resolve, reject) => {
-            Promise.resolve(input).then(iterable => {
+            this.resolve(input).then(iterable => {
                 let pendingPromises = 0;
                 let results = [];
                 if (!isIterable(iterable)) {
@@ -15,8 +15,8 @@ class ExtendedPromise extends Promise {
                 }
                 for (let iterator of iterable) {
                     pendingPromises++;
-                    Promise.resolve(iterator).then(iterator => {
-                        Promise.resolve(mapper(iterator)).then(value => {
+                    this.resolve(iterator).then(iterator => {
+                        this.resolve(mapper(iterator)).then(value => {
                             results.push(value);
                             if (!--pendingPromises) {
                                 resolve(results);
@@ -30,12 +30,12 @@ class ExtendedPromise extends Promise {
 
     static some(input, count) {
         return new this((resolve, reject) => {
-            Promise.resolve(input).then(input => {
+            this.resolve(input).then(input => {
                 let pendingCount = 0;
                 let resolved = [];
                 let rejected = [];
                 for (let promise of input) {
-                    Promise.resolve(promise).then(value => {
+                    this.resolve(promise).then(value => {
                         if (resolved.length < count) {
                             resolved.push(value);
                         }
@@ -57,8 +57,8 @@ class ExtendedPromise extends Promise {
         const useFirst = arguments.length <= 2;
         let accumulator;
         return new this((resolve, reject) => {
-            Promise.resolve(initialValue).then(initialValue => {
-                Promise.resolve(input).then(input => {
+            this.resolve(initialValue).then(initialValue => {
+                this.resolve(input).then(input => {
                     if (!isIterable(input)) {
                         if (useFirst) {
                             throw new TypeError('Input does not resolve to Iterable');
@@ -67,16 +67,16 @@ class ExtendedPromise extends Promise {
                         }
                     }
                     let length = 0;
-                    let promiseAccumulator = Promise.resolve(initialValue);
+                    let promiseAccumulator = this.resolve(initialValue);
                     for (let [index, value] of enumerate(input)) {
                         length++;
-                        Promise.resolve(value).then(value => {
+                        this.resolve(value).then(value => {
                             if (!index && useFirst) {
-                                promiseAccumulator = Promise.resolve(value);
+                                promiseAccumulator = this.resolve(value);
                                 return;
                             }
                             promiseAccumulator = promiseAccumulator.then(accumulator => {
-                                return Promise.resolve(reducer(accumulator, value, index, length));
+                                return this.resolve(reducer(accumulator, value, index, length));
                             }, reject);
                             if (index == length - 1) {
                                 promiseAccumulator.then(resolve, reject);

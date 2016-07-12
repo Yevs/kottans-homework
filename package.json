@@ -1,0 +1,23 @@
+{
+  "name": "kottans-homework",
+  "version": "1.0.0",
+  "description": "This repo contains my homework for Kottans 2016 JS Course held in Kiev",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha \"week06/test\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yevs/kottans-homework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yevs/kottans-homework/issues"
+  },
+  "homepage": "https://github.com/Yevs/kottans-homework#readme",
+  "dependencies": {
+    "mocha": "^2.5.3"
+  }
+}

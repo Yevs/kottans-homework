@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Yevs/kottans-homework#readme",
   "dependencies": {
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "chai": "*"
   }
 }
